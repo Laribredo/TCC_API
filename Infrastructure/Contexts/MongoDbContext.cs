@@ -21,8 +21,8 @@ namespace TCC_API.Infrastructure.Context
             try
             {
 
-                //MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl("mongodb://localhost:27017"));
-                MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false"));
+                MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl("mongodb+srv://portal-vegan:PortalVegan123@portal-vegan.ncfqw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"));
+                //MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false"));
                 //settings.Credential = MongoCredential.CreateCredential("Colidencias", "hc", "Hildeir#0106");
                 if (true)
                 {

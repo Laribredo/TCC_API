@@ -69,7 +69,7 @@ namespace TCC_API.Controllers
 
         [HttpGet("Recentes/{usuario}")]
         [Authorize]
-        public ActionResult GetRecentes(string usuario, [FromServices] PublicacaoService service)
+        public ActionResult GetRecentes(Guid usuario, [FromServices] PublicacaoService service)
         {
            return Ok(service.GetPublicacoesRecentesByUsuario(usuario));            
         }

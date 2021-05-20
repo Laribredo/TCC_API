@@ -62,7 +62,7 @@ namespace TCC_API.Services
             return context_.Usuarios.Find<Usuarios>(s => s.apelido == apelido).FirstOrDefault();
         }
 
-        public Usuarios GetUsuariosById(ObjectId id)
+        public Usuarios GetUsuariosById(Guid id)
         {
             context_ = new MongoDbContext();
             return context_.Usuarios.Find<Usuarios>(s => s.id == id).FirstOrDefault();
@@ -76,7 +76,7 @@ namespace TCC_API.Services
             {
                 try
                 {
-                    us.id = ObjectId.GenerateNewId();
+                    us.id = Guid.NewGuid();
                     context_.Usuarios.InsertOne(us);
                     dt.cadastrado = true;
                 }catch(Exception e)

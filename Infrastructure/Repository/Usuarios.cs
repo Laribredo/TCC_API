@@ -8,7 +8,7 @@ namespace TCC_API.Infrastructure.Repository
 {
     public class Usuarios
     {
-        public ObjectId? id { get; set; }
+        public Guid? id { get; set; }
         public string nome { get; set; }
         public string cpf { get; set; }
         public string email { get; set; }

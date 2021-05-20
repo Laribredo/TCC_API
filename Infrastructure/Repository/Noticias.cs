@@ -12,7 +12,7 @@ namespace TCC_API.Infrastructure.Repository
         public string titulo { get; set; }
         public string imagem { get; set; }
         public string  conteudo { get; set; }
-        public string usuario { get; set; }
+        public Guid usuario { get; set; }
         public DateTime? dtCadastro { get; set; }
     }
 }
