@@ -53,19 +53,51 @@ namespace TCC_API.Infrastructure.Context
             }
         }
 
-        //public IMongoCollection<VotosColidencia> VotosColidencia
-        //{
-        //    get
-        //    {
-        //        return _database.GetCollection<VotosColidencia>("VotosColidencia");
-        //    }
-        //}
-        //public IMongoCollection<ColidenciaFigurativa> ColidenciaFigurativa
-        //{
-        //    get
-        //    {
-        //        return _database.GetCollection<ColidenciaFigurativa>("ColidenciaFigurativa");
-        //    }
-        //}
+        public IMongoCollection<ComentariosNoticias> ComentariosNoticias
+        {
+            get
+            {
+                return _database.GetCollection<ComentariosNoticias>("ComentariosNoticias");
+            }
+        }
+        public IMongoCollection<Receitas> Receitas
+        {
+            get
+            {
+                return _database.GetCollection<Receitas>("Receitas");
+            }
+        }
+
+        public IMongoCollection<ComentariosReceitas> ComentariosReceitas
+        {
+            get
+            {
+                return _database.GetCollection<ComentariosReceitas>("ComentariosReceitas");
+            }
+        }
+
+        public IMongoCollection<EstadosCidades> EstadosCidades
+        {
+            get
+            {
+                return _database.GetCollection<EstadosCidades>("EstadosCidades");
+            }
+        }
+
+        public IMongoCollection<Restaurantes> Restaurantes
+        {
+            get
+            {
+                return _database.GetCollection<Restaurantes>("Restaurantes");
+            }
+        }
+        public IMongoCollection<AvaliacoesRestaurantes> AvaliacoesRestaurantes
+        {
+            get
+            {
+                return _database.GetCollection<AvaliacoesRestaurantes>("AvaliacoesRestaurantes");
+            }
+        }
+
     }
 }

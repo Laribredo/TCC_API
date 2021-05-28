@@ -39,6 +39,10 @@ namespace TCC_API
             services.AddTransient<TokenService>();
             services.AddTransient<RepositoryService>();
             services.AddTransient<PublicacaoService>();
+            services.AddTransient<ComentariosService>();
+            services.AddTransient<ReceitasService>();
+            services.AddTransient<RestaurantesService>();
+            services.AddTransient<AvaliacaoService>();
 
 
             services.AddCors(options =>
