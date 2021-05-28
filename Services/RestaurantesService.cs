@@ -48,6 +48,62 @@ namespace TCC_API.Services
             return response;
         }
 
+        public ResponseCadastroDTO updateRestaurante(Restaurantes restaurantes)
+        {
+
+            ResponseCadastroDTO response = new ResponseCadastroDTO();
+            try
+            {
+                MongoDbContext context_ = new MongoDbContext();
+                context_.Restaurantes.ReplaceOne(s => s.id == restaurantes.id,restaurantes);
+                response.cadastrado = true;
+            }
+            catch (Exception e)
+            {
+                response.cadastrado = false;
+                response.erros = new List<string>();
+                response.erros.Add("Ocorreu um erro ao se conectar com a base de dados.");
+                throw;
+            }
+
+            return response;
+        }
+
+        public List<Restaurantes> GetRestaurantesByIdUsuario(Guid idUsuario)
+        {
+            MongoDbContext context_ = new MongoDbContext();
+            var rest = context_.Restaurantes.AsQueryable();
+
+            return context_.Restaurantes.Find(s => s.idUsuario == idUsuario).ToList();
+        }
+
+        public Restaurantes GetRestaurantesById(Guid id)
+        {
+            MongoDbContext context_ = new MongoDbContext();
+            var rest = context_.Restaurantes.AsQueryable();
+
+            return context_.Restaurantes.Find(s => s.id == id).FirstOrDefault();
+        }
+
+
+        public bool DeleteRestauranteById(Guid id)
+        {
+            try
+            {
+                MongoDbContext context_ = new MongoDbContext();
+                var noticias = context_.Restaurantes.DeleteOne(s => s.id == id);
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
+
         public List<ResponseRestaurantesRecentesDTO> GetRestaurantesByCidade(string cidade, Guid idUsuario)
         {
             MongoDbContext context_ = new MongoDbContext();
